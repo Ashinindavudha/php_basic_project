@@ -1,0 +1,13 @@
+{
+    "name": "dhammavira/php-basic-project",
+    "description": "This is php-basic-project",
+    "authors": [
+        {
+            "name": "Ashinindavudha",
+            "email": "ashinindavudha2018@gmail.com"
+        }
+    ],
+    "require": {
+        "fakerphp/faker": "^1.14"
+    }
+}
