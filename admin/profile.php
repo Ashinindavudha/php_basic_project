@@ -1,6 +1,13 @@
 <?php include("nav/head.php") ?>
 
        <?php include("nav/head.php") ?>
+  <?php
+    session_start();
+    if (!isset($_SESSION['user'])) {
+      header('location: index.php');
+      exit();
+    }
+  ?>
 
 <body class="">
   <div class="wrapper ">

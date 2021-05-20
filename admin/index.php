@@ -1,5 +1,11 @@
 <?php include("nav/head.php") ?>
-
+<?php
+    session_start();
+    if (!isset($_SESSION['user'])) {
+      header('location: index.php');
+      exit();
+    }
+  ?>
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="rose" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
@@ -23,6 +29,7 @@
       <div class="content">
      
       </div>
+
       <?php include("nav/footer.php") ?>
     </div>
   </div>
