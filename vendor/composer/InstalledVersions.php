@@ -25,24 +25,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'dc7f01c089e4d14d0de2499246ffb3313fac2b19',
     'name' => 'dhammavira/php-basic-project',
   ),
   'versions' => 
   array (
     'dhammavira/php-basic-project' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'dc7f01c089e4d14d0de2499246ffb3313fac2b19',
     ),
     'fakerphp/faker' => 
     array (
