@@ -15,6 +15,14 @@ class ComposerStaticInit353cf0877b6e18b9f97eb6bd3ba2e942
         array (
             'Psr\\Container\\' => 14,
         ),
+        'L' => 
+        array (
+            'Libs\\' => 5,
+        ),
+        'H' => 
+        array (
+            'Helpers\\' => 8,
+        ),
         'F' => 
         array (
             'Faker\\' => 6,
@@ -25,6 +33,14 @@ class ComposerStaticInit353cf0877b6e18b9f97eb6bd3ba2e942
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Libs\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/admin/_classes/Libs',
+        ),
+        'Helpers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/admin/_classes/Helpers',
         ),
         'Faker\\' => 
         array (
