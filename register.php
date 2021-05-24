@@ -1,7 +1,7 @@
-<?php include("nav/head.php") ?>
+<?php include "nav/head.php"?>
 
 <body class="off-canvas-sidebar">
-  <?php include("nav/navbar.php") ?>
+  <?php include "nav/navbar.php"?>
    <div class="wrapper wrapper-full-page">
     <div class="page-header register-page header-filter" filter-color="black" style="background-image: url('assets/img/register.jpg')">
       <div class="container">
@@ -59,7 +59,12 @@
                       </button>
                       <h4 class="mt-3"> or be classical </h4>
                     </div>
-                    <form class="form" method="" action="">
+                    <?php if (isset($_GET['error'])): ?>
+                    <div class="alert alert-warning">
+                    Cannot create account. Please try again......
+                    </div>
+                    <?php endif?>
+                    <form class="form" method="post" action="admin/_actions/create.php">
                       <div class="form-group has-default">
                         <div class="input-group">
                           <div class="input-group-prepend">
@@ -67,7 +72,7 @@
                               <i class="material-icons">face</i>
                             </span>
                           </div>
-                          <input type="text" class="form-control" placeholder="First Name...">
+                          <input type="text" name="name" class="form-control" placeholder="First Name...">
                         </div>
                       </div>
                       <div class="form-group has-default">
@@ -77,9 +82,21 @@
                               <i class="material-icons">mail</i>
                             </span>
                           </div>
-                          <input type="text" class="form-control" placeholder="Email...">
+                          <input type="text" name="email" class="form-control" placeholder="Email...">
                         </div>
                       </div>
+
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">mail</i>
+                            </span>
+                          </div>
+                          <input type="text" name="phone" class="form-control" placeholder="Phone...">
+                        </div>
+                      </div>
+
                       <div class="form-group has-default">
                         <div class="input-group">
                           <div class="input-group-prepend">
@@ -87,7 +104,7 @@
                               <i class="material-icons">lock_outline</i>
                             </span>
                           </div>
-                          <input type="password" placeholder="Password..." class="form-control">
+                          <textarea name="address" placeholder="Address..." class="form-control"></textarea>
                         </div>
                       </div>
 
@@ -98,7 +115,7 @@
                               <i class="material-icons">lock_outline</i>
                             </span>
                           </div>
-                          <input type="password" placeholder="Password..." class="form-control">
+                          <input type="password" name="password" placeholder="Password..." class="form-control">
                         </div>
                       </div>
 
@@ -113,7 +130,8 @@
                         </label>
                       </div>
                       <div class="text-center">
-                        <a href="#pablo" class="btn btn-primary btn-round mt-4">Get Started</a>
+                        <!-- <a href="#pablo" class="btn btn-primary btn-round mt-4">Get Started</a> -->
+                        <button type="submit" class="btn btn-primary btn-round mt-4">Get Start</button>
                       </div>
                     </form>
                   </div>
@@ -123,6 +141,6 @@
           </div>
         </div>
       </div>
-      <?php include("nav/footer.php") ?>
+      <?php include "nav/footer.php"?>
     </div>
   </div>

@@ -1,10 +1,10 @@
 <?php
 
-include("../vendor/autoload.php");
+include "../vendor/autoload.php";
 
+use Helpers\Auth;
 use Libs\Database\MySQL;
 use Libs\Database\UsersTable;
-use Helpers\Auth;
 
 $table = new UsersTable(new MySQL());
 $all = $table->getAll();
@@ -12,14 +12,14 @@ $all = $table->getAll();
 $auth = Auth::check();
 
 ?>
-<?php include("nav/head.php") ?>
+<?php include "nav/head.php"?>
 <?php
-    // session_start();
-    // if (!isset($_SESSION['user'])) {
-    //   header('location: index.php');
-    //   exit();
-    // }
-  ?>
+// session_start();
+// if (!isset($_SESSION['user'])) {
+//   header('location: index.php');
+//   exit();
+// }
+?>
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="rose" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
@@ -34,11 +34,11 @@ $auth = Auth::check();
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
           Creative Tim
         </a></div>
-     <?php include("nav/sidebar.php") ?>
+     <?php include "nav/sidebar.php"?>
     </div>
     <div class="main-panel">
       <!-- Navbar -->
-     <?php include("nav/navbar.php") ?>
+     <?php include "nav/navbar.php"?>
       <!-- End Navbar -->
       <div class="content">
 		<!-- datatable start -->
@@ -50,7 +50,11 @@ $auth = Auth::check();
                   <div class="card-icon">
                     <i class="material-icons">assignment</i>
                   </div>
-                  <h4 class="card-title">User DataTables</h4>
+                  <h4 class="card-title">User
+                    <span class="badge bg-danger text-white">
+				<?=count($all)?>
+			</span>
+                  </h4>
                 </div>
                 <div class="card-body">
                   <div class="toolbar">
@@ -79,35 +83,39 @@ $auth = Auth::check();
                         </tr>
                       </tfoot>
                       <tbody>
-                       <?php foreach ($all as $user) : ?>
+                       <?php foreach ($all as $user): ?>
                         <tr>
-                          <td><?= $user->id ?></td>
-                          <td><?= $user->name ?></td>
-                          <td><?= $user->email ?></td>
-                         <td><?= $user->phone ?></td>
+                          <td><?=$user->id?></td>
+                          <td><?=$user->name?></td>
+                          <td><?=$user->email?></td>
+                         <td><?=$user->phone?></td>
                          <td>
-						<?php if ($user->value === '1') : ?>
+						<?php if ($user->value === '1'): ?>
 							<span class="badge bg-secondary">
-								<?= $user->role ?>
+								<?=$user->role?>
 							</span>
-						<?php elseif ($user->value === '2') : ?>
+						<?php elseif ($user->value === '2'): ?>
 							<span class="badge bg-primary">
-								<?= $user->role ?>
+								<?=$user->role?>
 							</span>
-						<?php else : ?>
+						<?php else: ?>
 							<span class="badge bg-success">
-								<?= $user->role ?>
+								<?=$user->role?>
 							</span>
-						<?php endif ?>
+						<?php endif?>
 					</td>
 
                           <td class="text-right">
                             <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
                             <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
-                            <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                            <!-- <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a> -->
+                            <?php if ($user->id !== $auth->id): ?>
+									<a href="_actions/delete.php?id=<?=$user->id?>" class="btn btn-link btn-danger btn-just-icon remove" onClick="return confirm('Are you sure?')"><i class="material-icons">close</i></a>
+								<?php endif?>
+
                           </td>
                         </tr>
-						<?php endforeach ?>
+						<?php endforeach?>
                       </tbody>
                     </table>
                   </div>
@@ -123,12 +131,12 @@ $auth = Auth::check();
 		<!-- datatable end -->
       </div>
 
-      <?php include("nav/footer.php") ?>
+      <?php include "nav/footer.php"?>
     </div>
   </div>
-  
-  
-  <?php include("nav/RightSidebar.php") ?>
+
+
+  <?php include "nav/RightSidebar.php"?>
 
   <script>
     $(document).ready(function() {
