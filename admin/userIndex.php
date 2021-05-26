@@ -104,11 +104,10 @@ $auth = Auth::check();
 							</span>
 						<?php endif?>
 					</td>
-
-                          <td class="text-right">
-                            <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
-                            <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
-                            <!-- <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a> -->
+                <td class="text-right">
+                  <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
+                   <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
+                    <!-- <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a> -->
                             <?php if ($user->id !== $auth->id): ?>
 									<a href="_actions/delete.php?id=<?=$user->id?>" class="btn btn-link btn-danger btn-just-icon remove" onClick="return confirm('Are you sure?')"><i class="material-icons">close</i></a>
 								<?php endif?>

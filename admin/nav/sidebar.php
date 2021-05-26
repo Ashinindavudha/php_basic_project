@@ -51,9 +51,9 @@
             <div class="collapse show" id="pagesExamples">
               <ul class="nav">
                 <li class="nav-item ">
-                  <a class="nav-link" href="../examples/pages/pricing.html">
-                    <span class="sidebar-mini"> P </span>
-                    <span class="sidebar-normal"> Pricing </span>
+                  <a class="nav-link" href="userIndex.php">
+                    <span class="sidebar-mini"> U L </span>
+                    <span class="sidebar-normal"> User List </span>
                   </a>
                 </li>
                 <li class="nav-item ">

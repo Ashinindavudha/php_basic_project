@@ -36,5 +36,7 @@ if ($user) {
     //HTTP::redirect("../profile.php");
     header("location: ../profile.php");
 } else {
-    HTTP::redirect("/index.php", "incorrect=1");
+    //HTTP::redirect("/index.php", "incorrect=1");
+    header('location: ../../index.php?incorrect=1');
+
 }
